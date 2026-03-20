@@ -7,11 +7,13 @@ dotenv.config();
 
 const app = express();
 
-connectDB();
+
 app.use(express.json())
 
 app.use("/books", booksRoutes)
 
-app.listen(5001, () => {
+connectDB().then(() => {
+    app.listen(5001, () => {
     console.log("Server is up and running!")
-})
+    });
+});
