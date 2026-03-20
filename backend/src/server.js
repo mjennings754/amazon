@@ -3,6 +3,7 @@ import booksRoutes from "./routes/booksRoutes.js"
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
 import cors from "cors";
+import { getBookById } from "./controllers/booksController.js";
 dotenv.config();
 
 const app = express();
@@ -16,9 +17,7 @@ app.use(express.json())
 
 app.use("/books", booksRoutes)
 
-app.get("/test", (req, res) => {
-    res.json({ message: "working" });
-});
+app.get('/book/:id', getBookById)
 
 connectDB().then(() => {
     app.listen(5001, () => {

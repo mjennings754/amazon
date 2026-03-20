@@ -14,7 +14,7 @@ export async function getBookById(req, res) {
     try {
         const book = await Book.findById(req.params.id)
         if(!book) return res.status(404).json({message: "Book not found!"})
-            res.json(note)
+            res.json(book)
     } catch (error) {
         console.error("Error in getBookById controller", error)
         res.status(500).json({message: "Internal server error"})

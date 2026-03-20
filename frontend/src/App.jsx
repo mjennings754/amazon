@@ -2,6 +2,7 @@ import Header from "./components/Header"
 import CreateBook from "./pages/CreateBook";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import BookPage from "./pages/BookPage";
 function App() {
 
   return (
@@ -10,6 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/new" element={<CreateBook />} />
+      <Route path="/book/:id" element={<BookPage />} />
     </Routes>
     </>
   )
