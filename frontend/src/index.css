@@ -16,3 +16,11 @@ button {
   border: 1px outset darkgray;
   color:black;
 }
+input {
+  border: 1px inset darkgray;
+  outline: none;
+  border-bottom: 1px solid darkgray;
+  border-right: 1px solid darkgray;
+  padding:4px;
+  display: block;
+}
