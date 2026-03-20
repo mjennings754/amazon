@@ -8,6 +8,7 @@ dotenv.config();
 const app = express();
 
 connectDB();
+app.use(express.json())
 
 app.use("/books", booksRoutes)
 
