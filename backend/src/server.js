@@ -2,15 +2,23 @@ import express from "express";
 import booksRoutes from "./routes/booksRoutes.js"
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
-
+import cors from "cors";
 dotenv.config();
 
 const app = express();
 
 
+app.use(cors({
+    origin: "http://localhost:5173",
+}));
+
 app.use(express.json())
 
 app.use("/books", booksRoutes)
+
+app.get("/test", (req, res) => {
+    res.json({ message: "working" });
+});
 
 connectDB().then(() => {
     app.listen(5001, () => {

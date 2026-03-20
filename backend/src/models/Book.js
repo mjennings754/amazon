@@ -20,7 +20,11 @@ const bookSchema = new mongoose.Schema({
     edition: {
         type:String,
         required:true
-    }, 
+    },
+    category: {
+        type: String,
+        required:true
+    },
 }, {timestamps: true});
 
 const Book = mongoose.model("Book", bookSchema)
