@@ -24,3 +24,8 @@ input {
   padding:4px;
   display: block;
 }
+.d-flex {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}

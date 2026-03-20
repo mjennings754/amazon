@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import api from "../lib/axios"
+import BookDetail from "../components/BookDetail.jsx"
 const BookPage = () => {
     const [book, setBook] = useState([])
 
@@ -19,9 +20,7 @@ const BookPage = () => {
     }, [id])
     return (
         <>
-        <p key={book._id}>{book.title}<br />{book.description}
-        <br/>{book.isbn}<br/>{book.author}<br/>{book.edition}
-        <br/>{book.category}</p>
+        <BookDetail book={book} />
         </>
     )
 }
