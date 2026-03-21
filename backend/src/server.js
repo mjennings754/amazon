@@ -3,6 +3,7 @@ import booksRoutes from "./routes/booksRoutes.js"
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
 import cors from "cors";
+import authRoutes from "./routes/auth.js"
 import { getBookById } from "./controllers/booksController.js";
 dotenv.config();
 
@@ -18,6 +19,9 @@ app.use(express.json())
 app.use("/api/books", booksRoutes)
 
 app.get('/book/:id', getBookById)
+app.use("/api/auth", authRoutes);
+
+
 
 connectDB().then(() => {
     app.listen(5001, () => {

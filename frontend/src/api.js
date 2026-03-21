@@ -1,0 +1,18 @@
+const API_URL = "http://localhost:5001";
+
+export const registerUser = async (userData) => {
+    const res = await fetch(`${API_URL}/api/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+    });
+
+    console.log("Response status", res.status);
+
+    if (!res.ok) {
+        const text = await res.text();
+        console.error("Register error response", text);
+        throw new Error("Email or username has already been used");
+    }
+    return res.json();
+}

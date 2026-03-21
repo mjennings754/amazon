@@ -3,6 +3,7 @@ import CreateBook from "./pages/CreateBook";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import BookPage from "./pages/BookPage";
+import Register from "./pages/Register";
 function App() {
 
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/new" element={<CreateBook />} />
       <Route path="/book/:id" element={<BookPage />} />
+      <Route path="/register" element={<Register />} />
     </Routes>
     </>
   )
