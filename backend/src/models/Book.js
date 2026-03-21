@@ -25,8 +25,12 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required:true
     },
+    price: {
+        type: Number,
+        required:true
+    }
 }, {timestamps: true});
 
 const Book = mongoose.model("Book", bookSchema)
 
-export default Book
+export default Book;

@@ -8,6 +8,7 @@ const CreateBook = () => {
     const [description, setDescription] = useState("")
     const [edition, setEdition] = useState("")
     const [category, setCategory] = useState("")
+    const [price, setPrice] = useState("")
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
@@ -20,7 +21,8 @@ const CreateBook = () => {
                 author,
                 description,
                 edition,
-                category
+                category,
+                price
             })
             console.log(response.data)
             navigate("/")
@@ -79,6 +81,14 @@ return (
             placeholder="Category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
+            />
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="number"
+            placeholder="Price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
             />
         </div>
         <button type="submit">Add book</button>
