@@ -10,7 +10,7 @@ const BookPage = () => {
     useEffect(() => {
         const fetchBook = async () => {
             try {
-                const res = await api.get(`/book/${id}`)
+                const res = await api.get(`/books/${id}`)
                 setBook(res.data)
             } catch (error) {
                 console.error(error);

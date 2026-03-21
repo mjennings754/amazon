@@ -15,7 +15,7 @@ app.use(cors({
 
 app.use(express.json())
 
-app.use("/books", booksRoutes)
+app.use("/api/books", booksRoutes)
 
 app.get('/book/:id', getBookById)
 

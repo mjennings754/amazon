@@ -26,7 +26,7 @@ const HomePage = () => {
         <Link to={"/new"}>Add book</Link>
         <div>
             {books.map(book => {
-                return <Link to={`/book/${book._id}`}><p>{book.title}</p></Link>
+                return <Link key={book._id} to={`/book/${book._id}`}><p>{book.title}</p></Link>
             })}
         </div>
         </>
