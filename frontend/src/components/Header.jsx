@@ -7,8 +7,8 @@ function Header() {
     <header>
     <Link to={"/"}><img src={logo} width={100} height={100} /></Link>
     <img src={banner} width={400} />
-    <button>Sign in</button>
-    <button>Create an amazon account</button>
+    <button><Link to={"/login"}>Sign in</Link></button>
+    <button><Link to={"/register"}>Create an amazon account</Link></button>
     </header>
     </>
     )
