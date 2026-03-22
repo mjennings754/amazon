@@ -23,6 +23,11 @@ export const loginUser = async (userData) => {
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(userData),
     });
+    if (!res.ok) {
+        const text = await res.text();
+        console.error("Login error response", text);
+        throw new Error(text || "Login failed")
+    }
     return res.json();
 };
 

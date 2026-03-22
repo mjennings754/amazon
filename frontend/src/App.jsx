@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import BookPage from "./pages/BookPage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/book/:id" element={<BookPage />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
     </>
   )

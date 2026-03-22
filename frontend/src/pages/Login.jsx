@@ -34,10 +34,10 @@ export default function Login() {
             />
             <label>Password</label>
             <input type="password"
-            onChange={(e) => setForm({...form, password: e.target.value})}
+            onChange={(e) => setForm({ ...form, password: e.target.value})}
             />
             <button type="submit">Sign in</button>
         </form>
         </>
-    )
+    );
 }

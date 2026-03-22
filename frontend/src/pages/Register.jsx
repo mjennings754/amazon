@@ -16,7 +16,7 @@ export default function Register() {
             const data = await registerUser(form);
             alert(data.message)
             navigate("/login");
-        } catch (error) {
+        } catch (err) {
             console.error(err)
             setError(err.message);
         }
