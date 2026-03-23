@@ -10,7 +10,7 @@ function Header() {
     <Link to={"/"}><img src={logo} width={100} height={100} /></Link>
     <img src={banner} width={400} />
     {user ? (
-        <>Welcome, {user.username}</>
+        <>Welcome, {user.username}| <button><Link to={"/dashboard"}>Dashboard</Link></button></> 
     ) : (
         <>
     <button><Link to={"/login"}>Sign in</Link></button>
