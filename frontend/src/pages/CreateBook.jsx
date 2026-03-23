@@ -1,7 +1,10 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import api from "../lib/axios"
+import { useAuth } from "../context/AuthContext"
+import { useEffect } from "react"
 const CreateBook = () => {
+    const { user } = useAuth();
     const [isbn, setIsbn] = useState("")
     const [title, setTitle] = useState("")
     const [author, setAuthor] = useState("")
@@ -10,6 +13,11 @@ const CreateBook = () => {
     const [category, setCategory] = useState("")
     const [price, setPrice] = useState("")
     const navigate = useNavigate()
+    useEffect(() => {
+        if (!user) {
+            navigate("/login")
+        }
+    }, [user, navigate])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,6 +38,8 @@ const CreateBook = () => {
             console.log("Error creating book", error.response)
         }
     }
+
+    if (!user) return null
 return (
     <>
     <Link to={"/"}>Back to homepage</Link>
